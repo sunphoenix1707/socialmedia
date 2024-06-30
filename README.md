@@ -19,22 +19,7 @@ Project : Social media - backend
 └── package.json
                                     
 
-ER DIAGRAM - DATABASE
 
-+-----------+  +-----------+  +-----------+  +-----------+  +-----------+
-|   Users   |  |   Posts   |  | Comments  |  |   Likes   |  |Relationship|
-+-----------+  +-----------+  +-----------+  +-----------+  +-----------+
-| - id (PK) |  | - id (PK) |  | - id (PK) |  | - id (PK) |  | - id (PK) |
-| - username|  | - userId  |  | - userId  |  | - userId  |  | - follower|
-| - email   |  | - descr.  |  | - postId  |  | - postId  |  | - follower|
-| - password|  | - created |  | - desc    |  | - created |  | - follow. |
-| - name    |  | - img     |  | - created |  +-----------+  | - follow. |
-| - city    |  +-----------+  +-----------+                +-----------+
-| - website |  
-| - profPic |  
-| -coverPic |  
-| - cr. date|  
-+-----------+  
 
 
 

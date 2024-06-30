@@ -20,6 +20,7 @@ Project : Social media - backend
                                     
 
 
+Donot Follow REST URL CONVENTIONS::
 
 
 
@@ -29,65 +30,9 @@ Project : Social media - backend
 
 
 
-SQL QUERY FOR MYSQL WORKBENCH
-
-GRANT ALL PRIVILEGES ON *.* ';
-FLUSH PRIVILEGES;
-CREATE DATABASE  socialmedia;
-SHOW DATABASES;
-USE socialmedia;
-CREATE TABLE users (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    username VARCHAR(255) NOT NULL UNIQUE,
-    email VARCHAR(255) NOT NULL UNIQUE,
-    password VARCHAR(255) NOT NULL,
-    name VARCHAR(255) NOT NULL,
-    city VARCHAR(255),
-    website VARCHAR(255),
-    profilePic VARCHAR(255),
-    coverPic VARCHAR(255),
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
-
-CREATE TABLE posts (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    userId INT NOT NULL,
-    description TEXT,
-    createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (userId) REFERENCES users(id) ON DELETE CASCADE
-);
-
-CREATE TABLE comments (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    userId INT NOT NULL,
-    postId INT NOT NULL,
-    description TEXT NOT NULL,
-    createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (userId) REFERENCES users(id) ON DELETE CASCADE,
-    FOREIGN KEY (postId) REFERENCES posts(id) ON DELETE CASCADE
-);
-
-CREATE TABLE likes (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    userId INT NOT NULL,
-    postId INT NOT NULL,
-    createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (userId) REFERENCES users(id) ON DELETE CASCADE,
-    FOREIGN KEY (postId) REFERENCES posts(id) ON DELETE CASCADE
-);
-
-CREATE TABLE relationships (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    followerUserId INT NOT NULL,
-    followedUserId INT NOT NULL,
-    createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (followerUserId) REFERENCES users(id) ON DELETE CASCADE,
-    FOREIGN KEY (followedUserId) REFERENCES users(id) ON DELETE CASCADE
-);
-
-
-https://docs.google.com/document/d/1wXQoI79-wo0-1CGgIauW3fuU-JTyw5AG/edit?usp=sharing&ouid=113109488667119567302&rtpof=true&sd=true
-
+   
+  
+   
 
 Project ZIP FILE:
 
